@@ -32,8 +32,8 @@ print(df_1)
 #print(df_2)
 
 
-hybrid_V = df_1[")"] #put in column names
-hybrid_I = df_1[""]
+hybrid_V = df_1["V_Bias (V)"] #check that column names are correct
+hybrid_I = df_1["I_leakage (nA)"]
 
 plt.scatter(hybrid_V, hybrid_I, label="Hybrid IV", marker = ".")    
 plt.scatter(sensor_V_, sensor_I_nanoamps_, label="Sensor Tile IV", marker = ".")    #add correct numbers at end of sensor variables
@@ -42,6 +42,8 @@ plt.xlabel("Bias Voltage (V)")
 plt.ylabel("Leakage Current (nA)")
 #plt.ylabel("Log [Leakage Current (nA)]")
 plt.title("")   #include serial no, lights on/off, etc.
+plt.legend()
+
 plt.show()
 
 #temporary script for plotting
