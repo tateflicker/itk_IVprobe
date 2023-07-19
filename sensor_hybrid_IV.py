@@ -65,7 +65,7 @@ def sensor_hybrid_compare(hybrid_V_68, hybrid_I_68, sensor_V_68, sensor_I_nanoam
     axs[0].scatter(hybrid_V_68, hybrid_I_68, label = "BM 0068", marker = ".")
     axs[0].scatter(sensor_V_68, sensor_I_nanoamps_68, label = "Sensor Tile", marker = ".")
     axs[0].set_xlabel("Bias Voltage (V)", fontsize = 12)
-    axs[0,0].set_ylabel("Leakage Current (nA)", fontsize = 12)
+    axs[0].set_ylabel("Leakage Current (nA)", fontsize = 12)
     axs[0].set_title("BM 0068 IV", fontsize = 16)
     axs[0].legend(fontsize = 12)
 
