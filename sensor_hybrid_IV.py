@@ -194,35 +194,35 @@ def current_in_microamps_68(hybrid_I_68_microamps, hybrid_V_68):
     plt.scatter(hybrid_V_68, hybrid_I_68_microamps, marker = ".")
     plt.xlabel("Bias Voltage (V)", fontsize = 8)
     plt.ylabel("Leakage Current (µA)", fontsize = 8)
-    plt.title("BM 0068 IV", fontsize = 10)
+    plt.title("20UPGB42000068", fontsize = 10)
     plt.show()
 
 def current_in_microamps_70(hybrid_I_70_microamps, hybrid_V_70):
     plt.scatter(hybrid_V_70, hybrid_I_70_microamps, marker = ".")
     plt.xlabel("Bias Voltage (V)", fontsize = 8)
     plt.ylabel("Leakage Current (µA)", fontsize = 8)
-    plt.title("BM 0070 IV", fontsize = 10)
+    plt.title("20UPGB42000070", fontsize = 10)
     plt.show()
 
 def current_in_microamps_71(hybrid_I_71_microamps, hybrid_V_71):
     plt.scatter(hybrid_V_71, hybrid_I_71_microamps, marker = ".")
     plt.xlabel("Bias Voltage (V)", fontsize = 8)
     plt.ylabel("Leakage Current (µA)", fontsize = 8)
-    plt.title("BM 0071 IV", fontsize = 10)
+    plt.title("20UPGB42000071", fontsize = 10)
     plt.show()
 
 def current_in_microamps_72(hybrid_I_72_microamps, hybrid_V_72):
     plt.scatter(hybrid_V_72, hybrid_I_72_microamps, marker = ".")
     plt.xlabel("Bias Voltage (V)", fontsize = 8)
     plt.ylabel("Leakage Current (µA)", fontsize = 8)
-    plt.title("BM 0072 IV", fontsize = 10)
+    plt.title("20UPGB42000072", fontsize = 10)
     plt.show()
 
 def current_in_microamps_73(hybrid_I_73_microamps, hybrid_V_73):
     plt.scatter(hybrid_V_73, hybrid_I_73_microamps, marker = ".")
     plt.xlabel("Bias Voltage (V)", fontsize = 8)
     plt.ylabel("Leakage Current (µA)", fontsize = 8)
-    plt.title("BM 0073 IV", fontsize = 10)
+    plt.title("20UPGB42000073", fontsize = 10)
     plt.show()
 
 if __name__ == "__main__":
