@@ -33,41 +33,60 @@ def main():
     df_70_lightsOff = pd.read_csv("20UPGB42000070_14BB3_20230714-095815_lightsOff.csv", skiprows = [0,1,2,3,4,5])
     hybrid_V_70_lightsOff = df_70_lightsOff["V_Bias (V)"]
     hybrid_I_70_lightsOff = df_70_lightsOff["I_leakage (nA)"]
+    #I_uncertainty_70_lightsOff = df_70_lightsOff["I_Uncertainty (nA)"].values.tolist()
 
     df_68 = pd.read_csv("20UPGB42000068_14B8D_20230714-120813.csv", skiprows= [0,1,2,3,4,5])
     hybrid_V_68 = df_68["V_Bias (V)"] 
     hybrid_I_68 = df_68["I_leakage (nA)"]
     hybrid_I_68_microamps = [a / 1000 for a in hybrid_I_68]
+    I_uncertainty_68 = df_68["I_Uncertainty (nA)"].values.tolist()
+    I_uncertainty_68_microamps = [v / 1000 for v in I_uncertainty_68]
+    #print(I_uncertainty_68)
 
     df_70 = pd.read_csv("20UPGB42000070_14BB3_20230714-093611.csv", skiprows=[0,1,2,3,4,5])
     hybrid_V_70 = df_70["V_Bias (V)"] 
     hybrid_I_70 = df_70["I_leakage (nA)"]
     hybrid_I_70_microamps = [b / 1000 for b in hybrid_I_70]
+    I_uncertainty_70 = df_70["I_Uncertainty (nA)"].values.tolist()
+    I_uncertainty_70_microamps = [w / 1000 for w in I_uncertainty_70]
+    #print(I_uncertainty_70)
 
     df_71 = pd.read_csv("20UPGB42000071_14BA2_20230712-204622.csv", skiprows=[0,1,2,3])
     hybrid_V_71 = df_71["V_Bias"] 
     hybrid_I_71 = df_71["I_leakage"]
     hybrid_I_71_microamps = [c / 1000 for c in hybrid_I_71]
+    I_array_71 = np.array(hybrid_I_71_microamps)
+    #Using std deviation of current values for uncertainty:
+    I_uncertainty_71_microamps = np.std(I_array_71)
+    #print(I_uncertainty_71_microamps)
 
     df_72 = pd.read_csv("20UPGB42000072_14BA9_20230712-201946.csv", skiprows=[0,1,2,3])
     hybrid_V_72 = df_72["V_Bias"] 
     hybrid_I_72 = df_72["I_leakage"]
     hybrid_I_72_microamps = [d / 1000 for d in hybrid_I_72]
+    I_array_72 = np.array(hybrid_I_72_microamps)
+    #Using std deviation of current values for uncertainty:
+    I_uncertainty_72_microamps = np.std(I_array_72)
+    #print(I_uncertainty_72_microamps)
 
     df_73 = pd.read_csv("20UPGB42000073_14B9B_20230712-194434.csv", skiprows=[0,1,2,3])
     hybrid_V_73 = df_73["V_Bias"] 
     hybrid_I_73 = df_73["I_leakage"]
     hybrid_I_73_microamps = [e / 1000 for e in hybrid_I_73]
+    I_array_73 = np.array(hybrid_I_73_microamps)
+    #Using std deviation of current values for uncertainty:
+    I_uncertainty_73_microamps = np.std(I_array_73)
+    #print(I_uncertainty_73_microamps)
 
     sensor_hybrid_compare(hybrid_V_68, hybrid_I_68, sensor_V_68, sensor_I_nanoamps_68, hybrid_V_70, hybrid_I_70, sensor_V_70, sensor_I_nanoamps_70, hybrid_V_71, hybrid_I_71, sensor_V_71, sensor_I_nanoamps_71, hybrid_V_72, hybrid_I_72, sensor_V_72, sensor_I_nanoamps_72, hybrid_V_73, hybrid_I_73, sensor_V_73, sensor_I_nanoamps_73)
     log_sensor_hybrid(hybrid_V_68, hybrid_I_68, sensor_V_68, sensor_I_nanoamps_68, hybrid_V_70, hybrid_I_70, sensor_V_70, sensor_I_nanoamps_70, hybrid_V_71, hybrid_I_71, sensor_V_71, sensor_I_nanoamps_71, hybrid_V_72, hybrid_I_72, sensor_V_72, sensor_I_nanoamps_72, hybrid_V_73, hybrid_I_73, sensor_V_73, sensor_I_nanoamps_73)
     all_five_BMs(hybrid_V_68, hybrid_I_68, hybrid_V_70, hybrid_I_70, hybrid_V_71, hybrid_I_71, hybrid_V_72, hybrid_I_72, hybrid_V_73, hybrid_I_73)
     lightsOn_lightsOff(hybrid_V_70, hybrid_I_70, hybrid_V_70_lightsOff, hybrid_I_70_lightsOff)
-    current_in_microamps_68(hybrid_I_68_microamps, hybrid_V_68)
-    current_in_microamps_70(hybrid_I_70_microamps, hybrid_V_70)
-    current_in_microamps_71(hybrid_I_71_microamps, hybrid_V_71)
-    current_in_microamps_72(hybrid_I_72_microamps, hybrid_V_72)
-    current_in_microamps_73(hybrid_I_73_microamps, hybrid_V_73)
+    current_in_microamps_68(hybrid_I_68_microamps, hybrid_V_68, I_uncertainty_68_microamps)
+    current_in_microamps_70(hybrid_I_70_microamps, hybrid_V_70, I_uncertainty_70_microamps)
+    current_in_microamps_71(hybrid_I_71_microamps, hybrid_V_71, I_uncertainty_71_microamps)
+    current_in_microamps_72(hybrid_I_72_microamps, hybrid_V_72, I_uncertainty_72_microamps)
+    current_in_microamps_73(hybrid_I_73_microamps, hybrid_V_73, I_uncertainty_73_microamps)
 
 
 def sensor_hybrid_compare(hybrid_V_68, hybrid_I_68, sensor_V_68, sensor_I_nanoamps_68, hybrid_V_70, hybrid_I_70, sensor_V_70, sensor_I_nanoamps_70, hybrid_V_71, hybrid_I_71, sensor_V_71, sensor_I_nanoamps_71, hybrid_V_72, hybrid_I_72, sensor_V_72, sensor_I_nanoamps_72, hybrid_V_73, hybrid_I_73, sensor_V_73, sensor_I_nanoamps_73):
@@ -190,36 +209,41 @@ def lightsOn_lightsOff(hybrid_V_70, hybrid_I_70, hybrid_V_70_lightsOff, hybrid_I
    plt.show()
 
 
-def current_in_microamps_68(hybrid_I_68_microamps, hybrid_V_68):
-    plt.scatter(hybrid_V_68, hybrid_I_68_microamps, marker = ".")
+def current_in_microamps_68(hybrid_I_68_microamps, hybrid_V_68, I_uncertainty_68_microamps):
+    #plt.scatter(hybrid_V_68, hybrid_I_68_microamps, marker = ".")
+    plt.errorbar(hybrid_V_68, hybrid_I_68_microamps, fmt = ".", yerr = I_uncertainty_68_microamps, ecolor="black")
     plt.xlabel("Bias Voltage (V)", fontsize = 8)
     plt.ylabel("Leakage Current (µA)", fontsize = 8)
     plt.title("20UPGB42000068", fontsize = 10)
     plt.show()
 
-def current_in_microamps_70(hybrid_I_70_microamps, hybrid_V_70):
-    plt.scatter(hybrid_V_70, hybrid_I_70_microamps, marker = ".")
+def current_in_microamps_70(hybrid_I_70_microamps, hybrid_V_70, I_uncertainty_70_microamps):
+    #plt.scatter(hybrid_V_70, hybrid_I_70_microamps, marker = ".")
+    plt.errorbar(hybrid_V_70, hybrid_I_70_microamps, fmt = ".", yerr = I_uncertainty_70_microamps, ecolor="black")
     plt.xlabel("Bias Voltage (V)", fontsize = 8)
     plt.ylabel("Leakage Current (µA)", fontsize = 8)
     plt.title("20UPGB42000070", fontsize = 10)
     plt.show()
 
-def current_in_microamps_71(hybrid_I_71_microamps, hybrid_V_71):
-    plt.scatter(hybrid_V_71, hybrid_I_71_microamps, marker = ".")
+def current_in_microamps_71(hybrid_I_71_microamps, hybrid_V_71, I_uncertainty_71_microamps):
+    #plt.scatter(hybrid_V_71, hybrid_I_71_microamps, marker = ".")
+    plt.errorbar(hybrid_V_71, hybrid_I_71_microamps, fmt = ".", yerr = I_uncertainty_71_microamps, ecolor="black")
     plt.xlabel("Bias Voltage (V)", fontsize = 8)
     plt.ylabel("Leakage Current (µA)", fontsize = 8)
     plt.title("20UPGB42000071", fontsize = 10)
     plt.show()
 
-def current_in_microamps_72(hybrid_I_72_microamps, hybrid_V_72):
-    plt.scatter(hybrid_V_72, hybrid_I_72_microamps, marker = ".")
+def current_in_microamps_72(hybrid_I_72_microamps, hybrid_V_72, I_uncertainty_72_microamps):
+    #plt.scatter(hybrid_V_72, hybrid_I_72_microamps, marker = ".")
+    plt.errorbar(hybrid_V_72, hybrid_I_72_microamps, fmt = ".", yerr = I_uncertainty_72_microamps, ecolor="black")
     plt.xlabel("Bias Voltage (V)", fontsize = 8)
     plt.ylabel("Leakage Current (µA)", fontsize = 8)
     plt.title("20UPGB42000072", fontsize = 10)
     plt.show()
 
-def current_in_microamps_73(hybrid_I_73_microamps, hybrid_V_73):
-    plt.scatter(hybrid_V_73, hybrid_I_73_microamps, marker = ".")
+def current_in_microamps_73(hybrid_I_73_microamps, hybrid_V_73, I_uncertainty_73_microamps):
+    #plt.scatter(hybrid_V_73, hybrid_I_73_microamps, marker = ".")
+    plt.errorbar(hybrid_V_73, hybrid_I_73_microamps, fmt = ".", yerr = I_uncertainty_73_microamps, ecolor="black")
     plt.xlabel("Bias Voltage (V)", fontsize = 8)
     plt.ylabel("Leakage Current (µA)", fontsize = 8)
     plt.title("20UPGB42000073", fontsize = 10)
