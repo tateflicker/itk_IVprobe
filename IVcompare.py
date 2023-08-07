@@ -25,20 +25,56 @@ def main():
   V_bias_hybrid = [0, 4.7, 9.7, 14.7, 19.7, 24.7, 29.8, 34.8, 39.8, 44.8, 49.9, 54.8, 59.8, 64.7, 69.8, 74.8, 84.8, 89.8, 94.8, 99.9, 104.8, 109.9, 114.8, 119.8, 124.8, 129.9, 134.8, 139.9, 144.9, 150, 154.9, 160, 164.9, 169.9, 174.9, 179.9, 185, 190, 194.9, 199.9]
 
   hybrid_I_microamps_70 = [0, 0.08835, 0.1425999999999999, 0.16155, 0.1635, 0.1645, 0.1655, 0.1656, 0.1660499999999999, 0.16625, 0.1665, 0.16715, 0.16715, 0.1680499999999999, 0.16855, 0.1695, 0.17015, 0.1709, 0.171, 0.1715, 0.1722999999999999, 0.173, 0.17315, 0.1735, 0.174, 0.17445, 0.1749, 0.175, 0.1755, 0.176, 0.176, 0.1764999999999999, 0.1767499999999999, 0.177, 0.17745, 0.1775, 0.178, 0.1785, 0.17855, 0.179, 0.17945]
-  #I_error_70 = use sigmacurrent from db
+  I_error_70 = [0, 0.0007088723439378, 0.0013190905958272, 0.00015, 0, 2.775557561562892e-17, 0, 0.0002, 0.00015, 0.0006020797289396, 0.0003162277660168, 0.000502493781056, 0.0003905124837953, 0.00035, 0.00015, 0, 0.0002291287847477, 0.0002, 0, 0, 0.0007483314773547, 0.0002236067977499, 0.0002291287847477, 0, 0, 0.00015, 0.0002, 0, 0, 0, 0, 2.775557561562892e-17, 0.00025, 0, 0.00015, 0, 0, 2.775557561562892e-17, 0.00015, 0, 0.00015]
 
   hybrid_I_microamps_71 = [0, 0.09985, 0.1285, 0.13745, 0.1395, 0.141, 0.14225, 0.1445, 0.1457, 0.1472, 0.1485, 0.1495, 0.151, 0.1519999999999999, 0.153, 0.1539999999999999, 0.155, 0.1557, 0.1565, 0.1575, 0.1579999999999999, 0.15875, 0.1595, 0.1599999999999999, 0.1605, 0.161, 0.1615, 0.1619499999999999, 0.16245, 0.163, 0.1638, 0.1642999999999999, 0.16495, 0.1655, 0.1659999999999999, 0.1665, 0.167, 0.1673, 0.16755, 0.1681, 0.1685]
-  #I_error_71 = use sigmacurrent from db
+  I_error_71 = [0, 0.0003201562118716, 0, 0.00015, 0, 0, 0.0006800735254367, 2.775557561562892e-17, 0.0002449489742783, 0.0006403124237432, 2.775557561562892e-17, 0, 0, 2.775557561562892e-17, 0, 2.775557561562892e-17, 0, 0.0002449489742783, 2.775557561562892e-17, 0, 2.775557561562892e-17, 0.00025, 0, 2.775557561562892e-17, 2.775557561562892e-17, 0, 0, 0.0002692582403567, 0.00015, 0, 0.0002449489742783, 0.0002449489742783, 0.00015, 0, 2.775557561562892e-17, 2.775557561562892e-17, 0, 0.0002449489742783, 0.00015, 0.0003, 2.775557561562892e-17]
 
   hybrid_I_microamps_72 = [0, 0.08535, 0.1185499999999999, 0.136, 0.1387, 0.13995, 0.141, 0.1430499999999999, 0.1447999999999999, 0.14685, 0.1479499999999999, 0.14865, 0.15095, 0.1515, 0.1525, 0.1535, 0.15375, 0.155, 0.1559999999999999, 0.1567, 0.1575, 0.15805, 0.1588999999999999, 0.15935, 0.1599, 0.1605, 0.161, 0.1615, 0.1619999999999999, 0.16275, 0.1632, 0.1637, 0.16435, 0.1645, 0.165, 0.1655, 0.1659999999999999, 0.1664, 0.1668, 0.167, 0.1675]
-  #I_error_72 = use sigmacurrent from db
+  I_error_72 = [0, 0.0012854960132182, 0.0004153311931459, 0.0005477225575051, 0.0002449489742783, 0.0002692582403567, 0.0002236067977499, 0.00015, 0.0004, 0.00105, 0.00015, 0.0005937171043518, 0.0011926860441876, 0.0009486, 832980505, 2.775557561562892e-17, 0, 0.0011672617529928, 0, 2.775557561562892e-17, 0.0002449489742783, 0, 0.00015, 0.0002, 0.0002291287847477, 0.0002, 2.775557561562892e-17, 0, 0, 2.775557561562892e-17, 0.000025, 0.0002449489742783, 0, 0.0002449489742783, 0.0002291287847477, 2.775557561562892e-17, 0, 0, 2.775557561562892e-17, 0.0002, 0.0002449489742783, 0, 0]
 
-  #BM73 plot not updated yet?
+  hybrid_I_microamps_73 = [0.015, 0.115, 0.15, 0.17200000000000001, 0.17500000000000002, 0.1785, 0.18, 0.18, 0.18, 0.1805, 0.182, 0.1845, 0.185, 0.185, 0.185, 0.185, 0.186, 0.19, 0.19, 0.19, 0.19, 0.19, 0.19, 0.1925, 0.195, 0.195, 0.195, 0.195, 0.195, 0.195, 0.195, 0.195, 0.1975, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2]
+  #no simgacurrent or uncertainty data for BM 73
+
+  IVcompare(V_bias_sensor, sensor_I_microamps_70, sensor_I_microamps_71, sensor_I_microamps_72, sensor_I_microamps_73, V_bias_hybrid, hybrid_I_microamps_70, hybrid_I_microamps_71, hybrid_I_microamps_72, hybrid_I_microamps_73, I_error_70, I_error_71, I_error_72)
 
 
-def IVcompare(V_bias_sensor, sensor_I_microamps_70, sensor_I_microamps_71, sensor_I_microamps, 72, V_bias_hybrid, hybrid_I_microamps_70, hybrid_I_microamps_71, hybrid_I_microamps_72):
-  fig, axs = plt.subplots()
+def IVcompare(V_bias_sensor, sensor_I_microamps_70, sensor_I_microamps_71, sensor_I_microamps_72, V_bias_hybrid, hybrid_I_microamps_70, hybrid_I_microamps_71, hybrid_I_microamps_72, hybrid_I_microamps_73, I_error_70, I_error_71, I_error_72):
+  fig, axs = plt.subplots(2,2)
   axs[0,0].scatter(V_bias_sensor, sensor_I_microamps_70, marker = ".", label = "Sensor Tile")
   axs[0,0].errorbar(V_bias_hybrid, hybrid_I_microamps_70, fmt = ".", label = "Hybrid", yerr = I_error_70)
+  axs[0,1].scatter(V_bias_sensor, sensor_I_microamps_71, marker = ".", label = "Sensor Tile")
+  axs[0,1].errorbar(V_bias_hybrid, hybrid_I_microamps_71, fmt = ".", label = "Hybrid", yerr = I_error_71)
+  axs[1,0].scatter(V_bias_sensor, sensor_I_microamps_72, marker = ".", label = "Sensor Tile")
+  axs[1,0].errorbar(V_bias_hybrid, hybrid_I_microamps_72, fmt = ".", label = "Hybrid", yerr = I_error_72)
+  axs[1,1].scatter(V_bias_sensor, sensor_I_microamps_73, marker = ".", label = "Sensor Tile")
+  axs[1,1].scatter(V_bias_hybrid, hybrid_I_microamps_73, marker = ".", label = "Hybrid")
+
+  axs[0,0].set_xlabel("Bias Voltage (V)", fontsize = 8)
+  axs[0,0].set_ylabel("Leakage Current (µA)", fontsize = 8)
+  axs[0,0].set_title("20UPGB42000070")
+  axs[0,0].legend(loc = "lower right", fontsize = 8)
+
+  axs[0,1].set_xlabel("Bias Voltage (V)", fontsize = 8)
+  axs[0,1].set_ylabel("Leakage Current (µA)", fontsize = 8)
+  axs[0,1].set_title("20UPGB42000071")
+  axs[0,1].legend(loc = "lower right", fontsize = 8)
+
+  axs[1,0].set_xlabel("Bias Voltage (V)", fontsize = 8)
+  axs[1,0].set_ylabel("Leakage Current (µA)", fontsize = 8)
+  axs[1,0].set_title("20UPGB42000072")
+  axs[1,0].legend(loc = "lower right", fontsize = 8)
+
+  axs[1,1].set_xlabel("Bias Voltage (V)", fontsize = 8)
+  axs[1,1].set_ylabel("Leakage Current (µA)", fontsize = 8)
+  axs[1,1].set_title("20UPGB42000073")
+  axs[1,1].legend(loc = "lower right", fontsize = 8)
+                      
+  fig.tight_layout()
+  fig.show()
+
+
+if __name__ == "__main__":
+  main()
   
   
