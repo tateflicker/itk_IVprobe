@@ -11,6 +11,7 @@ def main():
 
   sensor_I_microamps_70 = [1.9283000000000003,1.2904000000000002,1.4061,1.4687000000000003,1.489,1.5008000000000001,1.5091,1.5158,1.5212999999999999,1.5261,1.5303,1.5342,1.538,1.5415,1.5448,1.5483,1.5517,1.5552000000000001,1.5587000000000002,1.5621,1.5656,1.5690000000000002,1.5724000000000002,1.5757000000000003,1.5792000000000002,1.5827000000000002,1.5860999999999998,1.5895000000000001,1.5928,1.5962,1.5994000000000002,1.6028000000000002,1.6062,1.6096,1.6129000000000002,1.6162,1.6195000000000002,1.6229000000000002,1.6262000000000003,1.6296,1.6329000000000002]
   sensor_I_nanoamps_70 = [j * 1000 for j in sensor_I_microamps_70]
+  sensor_check_units_70 = [a / 1000 for a in sensor_I_microamps_70]
 
   sensor_I_microamps_71 = [0.87987,0.68506,0.77588,0.8607600000000001,0.8819000000000001,0.8935299999999999,0.90123,0.9068900000000001,0.9112,0.9145599999999999,0.9174500000000001,0.9199600000000001,0.9223300000000001,0.9246900000000001,0.9268500000000001,0.9286900000000001,0.9304500000000001,0.9322000000000001,0.9339500000000001,0.93568,0.9373900000000001,0.9390000000000001,0.94049,0.94193,0.94337,0.94481,0.9462700000000001,0.9477500000000001,0.94925,0.9508400000000001,0.9524500000000001,0.9552000000000002,0.9567000000000001,0.9579,0.9592,0.9603999999999999,0.9616,0.9627999999999999,0.964,0.9653,0.9665]
   sensor_I_nanoamps_71 =[k * 1000 for k in sensor_I_microamps_71]
@@ -37,6 +38,7 @@ def main():
   #no simgacurrent or uncertainty data for BM 73
 
   IVcompare(V_bias_sensor, sensor_I_microamps_70, sensor_I_microamps_71, sensor_I_microamps_72, sensor_I_microamps_73, V_bias_hybrid, hybrid_I_microamps_70, hybrid_I_microamps_71, hybrid_I_microamps_72, hybrid_I_microamps_73, I_error_70, I_error_71, I_error_72)
+  check_units(V_bias_sensor, sensor_check_units_70, V_bias_hybrid, hybrid_I_microamps_70)
 
 
 def IVcompare(V_bias_sensor, sensor_I_microamps_70, sensor_I_microamps_71, sensor_I_microamps_72, V_bias_hybrid, hybrid_I_microamps_70, hybrid_I_microamps_71, hybrid_I_microamps_72, hybrid_I_microamps_73, I_error_70, I_error_71, I_error_72):
@@ -72,6 +74,15 @@ def IVcompare(V_bias_sensor, sensor_I_microamps_70, sensor_I_microamps_71, senso
                       
   fig.tight_layout()
   fig.show()
+
+def check_units(V_bias_sensor, sensor_check_units_70, V_bias_hybrid, hybrid_I_microamps_70):
+  plt.scatter(V_bias_sensor, sensor_check_units_70, marker = ".", label = "Sensor Data / 1000")
+  plt.scatter(V_bias_hybrid, hybrid_I_microamps_70, marker = ".", label = "Hybrid")
+  plt.xlabel("Bias Voltage (V)")
+  plt.ylabel("Leakage Current - Checking Units")
+  plt.title("Checking Wafer IV Units")
+  plt.legend(loc = "lower right", fontsize = 10)
+  plt.show()
 
 
 if __name__ == "__main__":
