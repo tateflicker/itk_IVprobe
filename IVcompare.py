@@ -40,11 +40,11 @@ def main():
   hybrid_I_microamps_73 = [0.015,0.115,0.15,0.17200000000000001,0.17500000000000002,0.1785,0.18,0.18,0.18,0.1805,0.182,0.1845,0.185,0.185,0.185,0.185,0.186,0.19,0.19,0.19,0.19,0.19,0.19,0.1925,0.195,0.195,0.195,0.195,0.195,0.195,0.195,0.195,0.1975,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2]
   #no uncertainty data for BM 73
   
-  IVcompare(V_bias_sensor, sensor_I_microamps_70, sensor_I_microamps_71, sensor_I_microamps_72, sensor_I_microamps_73, V_bias_hybrid, hybrid_I_microamps_70, hybrid_I_microamps_71, hybrid_I_microamps_72, hybrid_I_microamps_73, I_error_70, I_error_71, I_error_72)
+  IVcompare(V_bias_sensor, sensor_I_microamps_68, sensor_I_microamps_70, sensor_I_microamps_71, sensor_I_microamps_72, sensor_I_microamps_73, V_bias_hybrid, hybrid_I_microamps_68, hybrid_I_microamps_70, hybrid_I_microamps_71, hybrid_I_microamps_72, hybrid_I_microamps_73, I_error_68, I_error_70, I_error_71, I_error_72)
   check_units(V_bias_sensor, sensor_check_units_70, V_bias_hybrid, hybrid_I_microamps_70)
 
 
-def IVcompare(V_bias_sensor, sensor_I_microamps_70, sensor_I_microamps_71, sensor_I_microamps_72, V_bias_hybrid, hybrid_I_microamps_70, hybrid_I_microamps_71, hybrid_I_microamps_72, hybrid_I_microamps_73, I_error_70, I_error_71, I_error_72):
+def IVcompare(V_bias_sensor, sensor_I_microamps_68, sensor_I_microamps_70, sensor_I_microamps_71, sensor_I_microamps_72, V_bias_hybrid, hybrid_I_microamps_68, hybrid_I_microamps_70, hybrid_I_microamps_71, hybrid_I_microamps_72, hybrid_I_microamps_73, I_error_68, I_error_70, I_error_71, I_error_72):
   fig, axs = plt.subplots(2,3)
   axs[0,0].scatter(V_bias_sensor, sensor_I_microamps_68, marker = ".", label = "Sensor Tile")
   axs[0,0].errorbar(V_bias_hybrid, hybrid_I_microamps_68, fmt = ".", label = "Hybrid", yerr = I_error_68)
