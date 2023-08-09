@@ -64,22 +64,22 @@ def IVcompare(V_bias_sensor, sensor_I_microamps_68, sensor_I_microamps_70, senso
   axs[0,0].legend(loc = "lower right", fontsize = 8)
 
   axs[0,1].set_xlabel("Bias Voltage (V)", fontsize = 8)
-  axs[0,1].set_ylabel("Leakage Current (µA)", fontsize = 8)
+  axs[0,1].set_ylabel("Leakage Current (microA)", fontsize = 8)
   axs[0,1].set_title("20UPGB42000070")
   axs[0,1].legend(loc = "lower right", fontsize = 8)
 
   axs[0,2].set_xlabel("Bias Voltage (V)", fontsize = 8)
-  axs[0,2].set_ylabel("Leakage Current (µA)", fontsize = 8)
+  axs[0,2].set_ylabel("Leakage Current (microA)", fontsize = 8)
   axs[0,2].set_title("20UPGB42000071")
   axs[0,2].legend(loc = "lower right", fontsize = 8)
 
   axs[1,0].set_xlabel("Bias Voltage (V)", fontsize = 8)
-  axs[1,0].set_ylabel("Leakage Current (µA)", fontsize = 8)
+  axs[1,0].set_ylabel("Leakage Current (microA)", fontsize = 8)
   axs[1,0].set_title("20UPGB42000072")
   axs[1,0].legend(loc = "lower right", fontsize = 8)
 
   axs[1,1].set_xlabel("Bias Voltage (V)", fontsize = 8)
-  axs[1,1].set_ylabel("Leakage Current (µA)", fontsize = 8)
+  axs[1,1].set_ylabel("Leakage Current (microA)", fontsize = 8)
   axs[1,1].set_title("20UPGB42000073")
   axs[1,1].legend(loc = "lower right", fontsize = 8)
 
