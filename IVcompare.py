@@ -86,7 +86,8 @@ def IVcompare(V_bias_sensor, sensor_I_microamps_68, sensor_I_microamps_70, senso
   axs[1,1].legend(loc = "lower right", fontsize = 8)
 
   fig.delaxes(axs[1,2])
-                      
+
+  fig.suptitle("Comparing Bare Module IV with Wafer IV")
   fig.tight_layout()
   fig.show()
 
