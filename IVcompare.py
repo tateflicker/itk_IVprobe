@@ -42,7 +42,7 @@ def main():
   check_units(V_bias_sensor, sensor_check_units_70, V_bias_hybrid, hybrid_I_microamps_70)
 
 
-def IVcompare(V_bias_sensor, sensor_I_microamps_68, sensor_I_microamps_70, sensor_I_microamps_71, sensor_I_microamps_72, V_bias_hybrid, hybrid_I_microamps_68, hybrid_I_microamps_70, hybrid_I_microamps_71, hybrid_I_microamps_72, hybrid_I_microamps_73, I_error_68, I_error_70, I_error_71, I_error_72):
+def IVcompare(V_bias_sensor, sensor_I_microamps_68, sensor_I_microamps_70, sensor_I_microamps_71, sensor_I_microamps_72, sensor_I_microamps_73, V_bias_hybrid, hybrid_I_microamps_68, hybrid_I_microamps_70, hybrid_I_microamps_71, hybrid_I_microamps_72, hybrid_I_microamps_73, I_error_68, I_error_70, I_error_71, I_error_72):
   fig, axs = plt.subplots(2,3)
   axs[0,0].scatter(V_bias_sensor, sensor_I_microamps_68, marker = ".", label = "Sensor Tile")
   axs[0,0].errorbar(V_bias_hybrid, hybrid_I_microamps_68, fmt = ".", label = "Hybrid", yerr = I_error_68)
