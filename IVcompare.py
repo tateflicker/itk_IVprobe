@@ -59,7 +59,7 @@ def IVcompare(V_bias_sensor, sensor_I_microamps_68, sensor_I_microamps_70, senso
 
   
   axs[0,0].set_xlabel("Bias Voltage (V)", fontsize = 8)
-  axs[0,0].set_ylabel("Leakage Current (µA)", fontsize = 8)
+  axs[0,0].set_ylabel("Leakage Current (microA)", fontsize = 8)
   axs[0,0].set_title("20UPGB42000068")
   axs[0,0].legend(loc = "lower right", fontsize = 8)
 
