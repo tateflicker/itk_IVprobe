@@ -45,25 +45,33 @@ def main():
 
 
 def IVcompare(V_bias_sensor, sensor_I_microamps_70, sensor_I_microamps_71, sensor_I_microamps_72, V_bias_hybrid, hybrid_I_microamps_70, hybrid_I_microamps_71, hybrid_I_microamps_72, hybrid_I_microamps_73, I_error_70, I_error_71, I_error_72):
-  fig, axs = plt.subplots(2,2)
-  axs[0,0].scatter(V_bias_sensor, sensor_I_microamps_70, marker = ".", label = "Sensor Tile")
-  axs[0,0].errorbar(V_bias_hybrid, hybrid_I_microamps_70, fmt = ".", label = "Hybrid", yerr = I_error_70)
-  axs[0,1].scatter(V_bias_sensor, sensor_I_microamps_71, marker = ".", label = "Sensor Tile")
-  axs[0,1].errorbar(V_bias_hybrid, hybrid_I_microamps_71, fmt = ".", label = "Hybrid", yerr = I_error_71)
+  fig, axs = plt.subplots(2,3)
+  axs[0,0].scatter(V_bias_sensor, sensor_I_microamps_68, marker = ".", label = "Sensor Tile")
+  axs[0,0].errorbar(V_bias_hybrid, hybrid_I_microamps_68, fmt = ".", label = "Hybrid", yerr = I_error_68)
+  axs[0,1].scatter(V_bias_sensor, sensor_I_microamps_70, marker = ".", label = "Sensor Tile")
+  axs[0,1].errorbar(V_bias_hybrid, hybrid_I_microamps_70, fmt = ".", label = "Hybrid", yerr = I_error_70)
+  axs[0,2].scatter(V_bias_sensor, sensor_I_microamps_71, marker = ".", label = "Sensor Tile")
+  axs[0,2].errorbar(V_bias_hybrid, hybrid_I_microamps_71, fmt = ".", label = "Hybrid", yerr = I_error_71)
   axs[1,0].scatter(V_bias_sensor, sensor_I_microamps_72, marker = ".", label = "Sensor Tile")
   axs[1,0].errorbar(V_bias_hybrid, hybrid_I_microamps_72, fmt = ".", label = "Hybrid", yerr = I_error_72)
   axs[1,1].scatter(V_bias_sensor, sensor_I_microamps_73, marker = ".", label = "Sensor Tile")
   axs[1,1].scatter(V_bias_hybrid, hybrid_I_microamps_73, marker = ".", label = "Hybrid")
 
+  
   axs[0,0].set_xlabel("Bias Voltage (V)", fontsize = 8)
   axs[0,0].set_ylabel("Leakage Current (µA)", fontsize = 8)
-  axs[0,0].set_title("20UPGB42000070")
+  axs[0,0].set_title("20UPGB42000068")
   axs[0,0].legend(loc = "lower right", fontsize = 8)
 
   axs[0,1].set_xlabel("Bias Voltage (V)", fontsize = 8)
   axs[0,1].set_ylabel("Leakage Current (µA)", fontsize = 8)
-  axs[0,1].set_title("20UPGB42000071")
+  axs[0,1].set_title("20UPGB42000070")
   axs[0,1].legend(loc = "lower right", fontsize = 8)
+
+  axs[0,2].set_xlabel("Bias Voltage (V)", fontsize = 8)
+  axs[0,2].set_ylabel("Leakage Current (µA)", fontsize = 8)
+  axs[0,2].set_title("20UPGB42000071")
+  axs[0,2].legend(loc = "lower right", fontsize = 8)
 
   axs[1,0].set_xlabel("Bias Voltage (V)", fontsize = 8)
   axs[1,0].set_ylabel("Leakage Current (µA)", fontsize = 8)
@@ -74,6 +82,8 @@ def IVcompare(V_bias_sensor, sensor_I_microamps_70, sensor_I_microamps_71, senso
   axs[1,1].set_ylabel("Leakage Current (µA)", fontsize = 8)
   axs[1,1].set_title("20UPGB42000073")
   axs[1,1].legend(loc = "lower right", fontsize = 8)
+
+  fig.delaxes(axs[1,2])
                       
   fig.tight_layout()
   fig.show()
