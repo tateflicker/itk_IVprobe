@@ -42,51 +42,57 @@ def main():
   hybrid_I_microamps_73 = [0.015,0.115,0.15,0.17200000000000001,0.17500000000000002,0.1785,0.18,0.18,0.18,0.1805,0.182,0.1845,0.185,0.185,0.185,0.185,0.186,0.19,0.19,0.19,0.19,0.19,0.19,0.1925,0.195,0.195,0.195,0.195,0.195,0.195,0.195,0.195,0.1975,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2]
   #no uncertainty data for BM 73
   
-  IVcompare(V_bias_sensor, sensor_I_microamps_68, sensor_I_microamps_70, sensor_I_microamps_71, sensor_I_microamps_72, sensor_I_microamps_73, hybrid_V_68, hybrid_V_70, hybrid_V_71, hybrid_V_72, hybrid_V_73, hybrid_I_microamps_68, hybrid_I_microamps_70, hybrid_I_microamps_71, hybrid_I_microamps_72, hybrid_I_microamps_73, I_error_68, I_error_70, I_error_71, I_error_72)
+  IVcompare_68(V_bias_sensor, sensor_I_microamps_68, hybrid_V_68, hybrid_I_microamps_68, I_error_68)
+  IVcompare_70(V_bias_sensor, sensor_I_microamps_70, hybrid_V_70, hybrid_I_microamps_70, I_error_70)
+  IVcompare_71(V_bias_sensor, sensor_I_microamps_71, hybrid_V_71, hybrid_I_microamps_71, I_error_71)
+  IVcompare_72(V_bias_sensor, sensor_I_microamps_72, hybrid_V_72, hybrid_I_microamps_72, I_error_72)
+  IVcompare_73(V_bias_sensor, sensor_I_microamps_73, hybrid_V_73, hybrid_I_microamps_73)
   check_units(V_bias_sensor, sensor_check_units_70, hybrid_V_70, hybrid_I_microamps_70)
 
+def IVcompare_68(V_bias_sensor, sensor_I_microamps_68, hybrid_V_68, hybrid_I_microamps_68, I_error_68):
+  plt.scatter(V_bias_sensor, sensor_I_microamps_68, marker = ".", label = "Sensor Tile")
+  plt.errorbar(hybrid_V_68, hybrid_I_microamps_68, fmt = ".", label = "Hybrid", yerr = I_error_68)
+  plt.xlabel("Bias Voltage (V)", fontsize = 8)
+  plt.ylabel("Leakage Current (microA)", fontsize = 8)
+  plt.title("20UPGB42000068")
+  plt.legend(loc = "lower right", fontsize = 8)
+  plt.show()
 
-def IVcompare(V_bias_sensor, sensor_I_microamps_68, sensor_I_microamps_70, sensor_I_microamps_71, sensor_I_microamps_72, sensor_I_microamps_73, hybrid_V_68, hybrid_V_70, hybrid_V_71, hybrid_V_72, hybrid_V_73, hybrid_I_microamps_68, hybrid_I_microamps_70, hybrid_I_microamps_71, hybrid_I_microamps_72, hybrid_I_microamps_73, I_error_68, I_error_70, I_error_71, I_error_72):
-  fig, axs = plt.subplots(5)
-  axs[0].scatter(V_bias_sensor, sensor_I_microamps_68, marker = ".", label = "Sensor Tile")
-  axs[0].errorbar(hybrid_V_68, hybrid_I_microamps_68, fmt = ".", label = "Hybrid", yerr = I_error_68)
-  axs[1].scatter(V_bias_sensor, sensor_I_microamps_70, marker = ".", label = "Sensor Tile")
-  axs[1].errorbar(hybrid_V_70, hybrid_I_microamps_70, fmt = ".", label = "Hybrid", yerr = I_error_70)
-  axs[2].scatter(V_bias_sensor, sensor_I_microamps_71, marker = ".", label = "Sensor Tile")
-  axs[2].errorbar(hybrid_V_71, hybrid_I_microamps_71, fmt = ".", label = "Hybrid", yerr = I_error_71)
-  axs[3].scatter(V_bias_sensor, sensor_I_microamps_72, marker = ".", label = "Sensor Tile")
-  axs[3].errorbar(hybrid_V_72, hybrid_I_microamps_72, fmt = ".", label = "Hybrid", yerr = I_error_72)
-  axs[4].scatter(V_bias_sensor, sensor_I_microamps_73, marker = ".", label = "Sensor Tile")
-  axs[4].scatter(hybrid_V_73, hybrid_I_microamps_73, marker = ".", label = "Hybrid")
-
+def IVcompare_70(V_bias_sensor, sensor_I_microamps_70, hybrid_V_70, hybrid_I_microamps_70, I_error_70):
+  plt.scatter(V_bias_sensor, sensor_I_microamps_70, marker = ".", label = "Sensor Tile")
+  plt.errorbar(hybrid_V_70, hybrid_I_microamps_70, fmt = ".", label = "Hybrid", yerr = I_error_70)
+  plt.xlabel("Bias Voltage (V)", fontsize = 8)
+  plt.ylabel("Leakage Current (microA)", fontsize = 8)
+  plt.title("20UPGB42000070")
+  plt.legend(loc = "lower right", fontsize = 8)
+  plt.show()
   
-  axs[0].set_xlabel("Bias Voltage (V)", fontsize = 8)
-  axs[0].set_ylabel("Leakage Current (microA)", fontsize = 8)
-  axs[0].set_title("20UPGB42000068")
-  axs[0].legend(loc = "lower right", fontsize = 8)
-
-  axs[1].set_xlabel("Bias Voltage (V)", fontsize = 8)
-  axs[1].set_ylabel("Leakage Current (microA)", fontsize = 8)
-  axs[1].set_title("20UPGB42000070")
-  axs[1].legend(loc = "lower right", fontsize = 8)
-
-  axs[2].set_xlabel("Bias Voltage (V)", fontsize = 8)
-  axs[2].set_ylabel("Leakage Current (microA)", fontsize = 8)
-  axs[2].set_title("20UPGB42000071")
-  axs[2].legend(loc = "lower right", fontsize = 8)
-
-  axs[3].set_xlabel("Bias Voltage (V)", fontsize = 8)
-  axs[3].set_ylabel("Leakage Current (microA)", fontsize = 8)
-  axs[3].set_title("20UPGB42000072")
-  axs[3].legend(loc = "lower right", fontsize = 8)
-
-  axs[4].set_xlabel("Bias Voltage (V)", fontsize = 8)
-  axs[4].set_ylabel("Leakage Current (microA)", fontsize = 8)
-  axs[4].set_title("20UPGB42000073")
-  axs[4].legend(loc = "lower right", fontsize = 8)
+def IVcompare_71(V_bias_sensor, sensor_I_microamps_71, hybrid_V_71, hybrid_I_microamps_71, I_error_71):  
+  plt.scatter(V_bias_sensor, sensor_I_microamps_71, marker = ".", label = "Sensor Tile")
+  plt.errorbar(hybrid_V_71, hybrid_I_microamps_71, fmt = ".", label = "Hybrid", yerr = I_error_71)
+  plt.xlabel("Bias Voltage (V)", fontsize = 8)
+  plt.ylabel("Leakage Current (microA)", fontsize = 8)
+  plt.title("20UPGB42000071")
+  plt.legend(loc = "lower right", fontsize = 8)
+  plt.show()
   
-  fig.tight_layout()
-  fig.show()
+def IVcompare_72(V_bias_sensor, sensor_I_microamps_72, hybrid_V_72, hybrid_I_microamps_72, I_error_72):
+  plt.scatter(V_bias_sensor, sensor_I_microamps_72, marker = ".", label = "Sensor Tile")
+  plt.errorbar(hybrid_V_72, hybrid_I_microamps_72, fmt = ".", label = "Hybrid", yerr = I_error_72)
+  plt.xlabel("Bias Voltage (V)", fontsize = 8)
+  plt.ylabel("Leakage Current (microA)", fontsize = 8)
+  plt.title("20UPGB42000072")
+  plt.legend(loc = "lower right", fontsize = 8)
+  plt.show()
+  
+def IVcompare_73(V_bias_sensor, sensor_I_microamps_73, hybrid_V_73, hybrid_I_microamps_73):
+  plt.scatter(V_bias_sensor, sensor_I_microamps_73, marker = ".", label = "Sensor Tile")
+  plt.scatter(hybrid_V_73, hybrid_I_microamps_73, marker = ".", label = "Hybrid")
+  plt.xlabel("Bias Voltage (V)", fontsize = 8)
+  plt.ylabel("Leakage Current (microA)", fontsize = 8)
+  plt.title("20UPGB42000073")
+  plt.legend(loc = "lower right", fontsize = 8)
+  plt.show()
 
 def check_units(V_bias_sensor, sensor_check_units_70, hybrid_V_70, hybrid_I_microamps_70):
   plt.scatter(V_bias_sensor, sensor_check_units_70, marker = ".", label = "Sensor Data / 1000")
