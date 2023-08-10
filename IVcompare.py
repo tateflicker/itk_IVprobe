@@ -50,10 +50,13 @@ def main():
   IVcompare_71(V_bias_sensor, sensor_I_microamps_71, hybrid_V_71, hybrid_I_microamps_71, I_error_71)
   IVcompare_72(V_bias_sensor, sensor_I_microamps_72, hybrid_V_72, hybrid_I_microamps_72, I_error_72)
   IVcompare_73(V_bias_sensor, sensor_I_microamps_73, hybrid_V_73, hybrid_I_microamps_73)
+
   check_units_70(V_bias_sensor, sensor_check_units_70, hybrid_V_70, hybrid_I_microamps_70)
   check_units_71(V_bias_sensor, sensor_check_units_71, hybrid_V_71, hybrid_I_microamps_71)
   check_units_72(V_bias_sensor, sensor_check_units_72, hybrid_V_72, hybrid_I_microamps_72)
   check_units_73(V_bias_sensor, sensor_check_units_73, hybrid_V_73, hybrid_I_microamps_73)
+
+  four_BMs(hybrid_V_70, hybrid_V_71, hybrid_V_72, hybrid_V_73, hybrid_I_microamps_70, hybrid_I_microamps_71, hybrid_I_microamps_72, hybrid_I_microamps_73, I_error_70, I_error_71, I_error_72)
 
 def IVcompare_68(V_bias_sensor, sensor_I_microamps_68, hybrid_V_68, hybrid_I_microamps_68, I_error_68):
   plt.scatter(V_bias_sensor, sensor_I_microamps_68, marker = ".", label = "Sensor Tile", color = "red")
@@ -134,6 +137,18 @@ def check_units_73(V_bias_sensor, sensor_check_units_73, hybrid_V_73, hybrid_I_m
   plt.ylabel("Leakage Current - Checking Units")
   plt.title("BM 73 - Checking Wafer IV Units")
   plt.legend(loc = "lower right", fontsize = 12)
+  plt.show()
+
+
+def four_BMs(hybrid_V_70, hybrid_V_71, hybrid_V_72, hybrid_V_73, hybrid_I_microamps_70, hybrid_I_microamps_71, hybrid_I_microamps_72, hybrid_I_microamps_73, I_error_70, I_error_71, I_error_72):
+  plt.errorbar(hybrid_V_70, hybrid_I_microamps_70, fmt = ".", label = "BM 70", yerr = I_error_70, color = "blue")
+  plt.errorbar(hybrid_V_71, hybrid_I_microamps_71, fmt = ".", label = "BM 71", yerr = I_error_71, color = "green")
+  plt.errorbar(hybrid_V_72, hybrid_I_microamps_72, fmt = ".", label = "BM 72", yerr = I_error_72, color = "red")
+  plt.scatter(hybrid_V_73, hybrid_I_microamps_73, marker = ".", label = "BM 73", color = "orange")
+  plt.xlabel("Bias Voltage (V)", fontsize = 16)
+  plt.ylabel("Leakage Current (microA)", fontsize = 16)
+  plt.title("Comparing Four BMs")
+  plt.legend(loc = "lower right", fontsize = 14)
   plt.show()
 
 
