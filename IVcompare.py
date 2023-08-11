@@ -166,10 +166,10 @@ def three_BMs(hybrid_V_70, hybrid_V_71, hybrid_V_72, hybrid_I_microamps_70, hybr
 def breakdown_comparison(hybrid_V_68, hybrid_V_70, hybrid_I_microamps_68, hybrid_I_microamps_70):
   plt.scatter(hybrid_V_68, hybrid_I_microamps_68, marker = "o", label = "BM 68", color = "blue")
   plt.scatter(hybrid_V_70, hybrid_I_microamps_70, marker = "o", label = "BM 70", color = "red")
-  plt.xlabel("Bias Voltage (V)", fontsize = 16)
-  plt.ylabel("Leakage Current (microA)", fontsize = 16)
-  plt.title("Breakdown vs No Breakdown", fontsize = 18)
-  plt.legend(loc = "lower right", fontsize = 16)
+  plt.xlabel("Bias Voltage (V)", fontsize = 20)
+  plt.ylabel("Leakage Current (microA)", fontsize = 20)
+  plt.title("Breakdown vs No Breakdown", fontsize = 24)
+  plt.legend(loc = "lower right", fontsize = 18)
   plt.show()
 
 if __name__ == "__main__":
